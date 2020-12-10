@@ -144,20 +144,20 @@ foreach ($sports3 as $sport) {
 }
 echo PHP_EOL;
 
-// print("#####q12#####".PHP_EOL);
-// $data = [ "user" => [ "name" => "satou", "age" => 33 ] ];
+print("#####q12#####".PHP_EOL);
+$data = [ "user" => [ "name" => "satou", "age" => 33 ] ];
 
-//   # 以下に回答を記載
+  # 以下に回答を記載
+print_r($data["user"]["name"]);
+echo PHP_EOL;
 
-// echo PHP_EOL;
+print("#####q13#####".PHP_EOL);
+$user_data = [ "name" => "神里", "age" => 31, "address" => "埼玉"];
+$update_data = [ "age" => 32, "address" => "沖縄" ];
 
-// print("#####q13#####".PHP_EOL);
-// $user_data = [ "name" => "神里", "age" => 31, "address" => "埼玉"];
-// $update_data = [ "age" => 32, "address" => "沖縄" ];
+  # 以下に回答を記載
 
-//   # 以下に回答を記載
-
-// echo PHP_EOL;
+echo PHP_EOL;
 
 // print("#####q14#####".PHP_EOL);
 // $data = [ "name" => "satou", "age" => 33, "address" => "saitama", "hobby" => "soccer", "email" => "hoge@fuga.com" ];
