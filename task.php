@@ -156,35 +156,58 @@ $user_data = [ "name" => "神里", "age" => 31, "address" => "埼玉"];
 $update_data = [ "age" => 32, "address" => "沖縄" ];
 
   # 以下に回答を記載
-
+$latest_data = array_replace($user_data,$update_data);
+print_r($latest_data);
 echo PHP_EOL;
 
-// print("#####q14#####".PHP_EOL);
-// $data = [ "name" => "satou", "age" => 33, "address" => "saitama", "hobby" => "soccer", "email" => "hoge@fuga.com" ];
+print("#####q14#####".PHP_EOL);
+$data = [ "name" => "satou", "age" => 33, "address" => "saitama", "hobby" => "soccer", "email" => "hoge@fuga.com" ];
 
-//   # 以下に回答を記載
+  # 以下に回答を記載
+  $data2 =[];
+  foreach($data as $new_data){
+    array_push($data2,$new_data);
+  }
+print_r($data2);
+echo PHP_EOL;
 
-// echo PHP_EOL;
 
-// print("#####q15#####".PHP_EOL);
-// $data1 = [ "name" => "saitou", "hobby" => "soccer", "age" => 33, "role" => "admin" ];
-// $data2 = [ "name" => "yamada", "hobby" => "baseball", "role" => "normal" ];
+print("#####q15#####".PHP_EOL);
+$data1 = [ "name" => "saitou", "hobby" => "soccer", "age" => 33, "role" => "admin" ];
+$data2 = [ "name" => "yamada", "hobby" => "baseball", "role" => "normal" ];
 
-//   # 以下に回答を記載
+  # 以下に回答を記載
+$search = 'age';
+$key = array_key_exists($search,$data1);
+if ($key) {
+  echo 'OK';
+} else {
+  echo 'NG';
+}
+echo PHP_EOL;
 
-// echo PHP_EOL;
+$key = array_key_exists($search,$data2);
+if($key){
+  echo 'OK';
+}else{
+  echo 'NG';
+}
+echo PHP_EOL;
 
-// print("#####q16#####".PHP_EOL);
-// $users = [
-//   [ "name" => "satou", "age" => 22 ],
-//   [ "name" => "yamada", "age" => 12 ],
-//   [ "name" => "takahashi", "age" => 32 ],
-//   [ "name" => "nakamura", "age" => 41 ]
-// ];
+print("#####q16#####".PHP_EOL);
+$users = [
+  [ "name" => "satou", "age" => 22 ],
+  [ "name" => "yamada", "age" => 12 ],
+  [ "name" => "takahashi", "age" => 32 ],
+  [ "name" => "nakamura", "age" => 41 ]
+];
 
-//   # 以下に回答を記載
+  # 以下に回答を記載
+foreach($users as $key=>$user){
+  print_r('私の名前は'.$user["name"].'です。年齢は'.$user["age"].'歳です。'.PHP_EOL);
+}
 
-// echo PHP_EOL;
+echo PHP_EOL;
 
 // print("#####q17#####".PHP_EOL);
 // class User
