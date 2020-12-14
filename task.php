@@ -239,24 +239,35 @@ $user2->info();
 
 echo PHP_EOL;
 
-// ## Q18. 年齢を用いた場合分けを利用して，期待する出力結果になるようなManクラスを作成して下さい。
-// print("#####q18#####".PHP_EOL);
-// // ```
-// // こんにちは，あじーと申します。宜しくお願いいたします。
-// // はいさいまいど〜，ゆたぼんです！！！
-// // ```
-//   # コードを追加
-// class Man
-// {
+## Q18. 年齢を用いた場合分けを利用して，期待する出力結果になるようなManクラスを作成して下さい。
+print("#####q18#####".PHP_EOL);
 
-// }
-// $man1 = new Man("あじー",32);
-// $man2 = new Man("ゆたぼん",10);
+  # コードを追加
+class Man
+{
+  protected $name;
+  protected $age;
 
-// $man1->introduce();
-// $man2->introduce();
+  function __construct($man_name,$man_age){
+    $this->name = $man_name;
+    $this->age = $man_age;
+  }
 
-// echo PHP_EOL;
+  function introduce(){
+    if($this->age < 30){
+      echo "はいさいまいど〜，".$this->name."です！！！".PHP_EOL;
+    }else{
+      echo "こんにちは､".$this->name."と申します。宜しくお願いいたします。".PHP_EOL;
+    }
+  }
+}
+$man1 = new Man("あじー",32);
+$man2 = new Man("ゆたぼん",10);
+
+$man1->introduce();
+$man2->introduce();
+
+echo PHP_EOL;
 
 // print("#####q19#####".PHP_EOL);
 // class Item{
