@@ -286,32 +286,76 @@ print($book->name.PHP_EOL);
 
 echo PHP_EOL;
 
-// print("#####q20#####".PHP_EOL);
-// class Human
-// {
+print("#####q20#####".PHP_EOL);
+class Human
+{
+  public $name;
+  public $age;
 
-//   # コードを追加
+  function __construct($human_name, $human_age)
+  {
+    $this->name = $human_name;
+    $this->age = $human_age;
+  }
+}
+class Zoo
+{
+  protected $zoo_name;
+  protected $zoo_price;
 
-// }
+  function __construct($zoo_name, $zoo_price)
+  {
+    $this->name = $zoo_name;
+    $this->price = $zoo_price;
+  }
+  
+  function info_entry_fee(Human $human)
+  {
+    if($human->age <= 5){
+      echo($human->name."さんの入場料金は".$this->price["infant"]."円です｡".PHP_EOL);
+    }elseif($human->age <=12){
+      echo($human->name."さんの入場料金は".$this->price["children"]."円です｡".PHP_EOL);
+    }elseif($human->age <=64){
+      echo($human->name."さんの入場料金は".$this->price["adult"]."円です｡".PHP_EOL);
+    }else{
+      echo($human->name."さんの入場料金は".$this->price["senior"]."円です｡".PHP_EOL);
+    }
+  }
+}
 
-// class Zoo
-// {
-    
-//   # コードを追加
-    
-// }
+$zoo = new Zoo("旭山動物園",[ "infant" => 0, "children" => 400, "adult" => 800, "senior" => 500]);
 
-// $zoo = new Zoo("旭山動物園",[ "infant" => 0, "children" => 400, "adult" => 800, "senior" => 500]);
+$human1 = new Human("たま",3);
+$human2 = new Human("ゆたぼん",10);
+$human3 = new Human("あじー",32);
+$human4 = new Human("ぎん",108);
 
-// $human1 = new Human("たま",3);
-// $human2 = new Human("ゆたぼん",10);
-// $human3 = new Human("あじー",32);
-// $human4 = new Human("ぎん",108);
+$humans = [ $human1, $human2, $human3, $human4 ];
 
-// $humans = [ $human1, $human2, $human3, $human4 ];
+foreach($humans as $human){
+  $zoo->info_entry_fee($human);
+}
 
-// foreach($humans as $human){
-//   $zoo->info_entry_fee($human);
-// }
+echo PHP_EOL;
 
-// echo PHP_EOL;
+## Q21. FizzBuzz問題の応用問題です。次の仕様、条件を満たすコードを書いて下さい。
+
+for ($i=1; $i <= 30 ; $i++){ 
+  if($i % 105 == 0){
+    echo "FizzBuzzHoge".PHP_EOL;
+  }elseif($i % 35 == 0){
+    echo "BuzzHoge".PHP_EOL;
+  }elseif($i % 21 == 0){
+    echo "FizzHoge" . PHP_EOL;
+  }elseif($i % 15 == 0){
+    echo "FizzBuzz" . PHP_EOL;
+  }elseif($i % 7 == 0){
+    echo "Hoge" . PHP_EOL;
+  }elseif($i % 5 == 0){
+    echo "Buzz" . PHP_EOL;
+  }elseif($i % 3 == 0){
+    echo "Fizz" . PHP_EOL;
+  }else{
+    echo $i . PHP_EOL;
+  }
+}
